@@ -11,6 +11,7 @@
 #import "ForetasteViewController.h"
 #import "PersonageViewController.h"
 #import "SettingViewController.h"
+#import "LoginViewController.h"
 
 #import "MenuViewController.h"
 #import "UIImage+UIColor.h"
@@ -34,7 +35,7 @@
     MenuViewController *menuViewController = [[MenuViewController alloc]init];
     menuViewController.view.backgroundColor = [UIColor clearColor];
     MainViewController *mainViewController = [[MainViewController alloc]init];
-    UINavigationController *navigation = [[UINavigationController alloc]initWithRootViewController:mainViewController];
+    FENavigationController *navigation = [[FENavigationController alloc]initWithRootViewController:mainViewController];
     
     
     self.slideMenuVC = [[HKSlideMenu3DController alloc] init];
@@ -60,44 +61,52 @@
 
 - (void)ChageViewController:(NSIndexPath *)indexPath{
     
-    UINavigationController *naviMain;
+    FENavigationController *naviMain;
     
         switch (indexPath.row) {
             case 0:{
                 MainViewController *mainController = [[MainViewController alloc]init];
-                naviMain = [[UINavigationController alloc]initWithRootViewController:mainController];
+                naviMain = [[FENavigationController alloc]initWithRootViewController:mainController];
             }
                 
                 break;
             case 1:
             {
                 ForetasteViewController *foretasteController = [[ForetasteViewController alloc]init];
-                naviMain = [[UINavigationController alloc]initWithRootViewController:foretasteController];
+                naviMain = [[FENavigationController alloc]initWithRootViewController:foretasteController];
                 
             }
                 break;
             case 2:
             {
                 PersonageViewController *personageController = [[PersonageViewController alloc]init];
-                naviMain = [[UINavigationController alloc]initWithRootViewController:personageController];
+                naviMain = [[FENavigationController alloc]initWithRootViewController:personageController];
             }
                 break;
             case 3:
             {
                 SettingViewController *settingController = [[SettingViewController alloc]init];
-                naviMain = [[UINavigationController alloc]initWithRootViewController:settingController];
+                settingController.isMenu = YES;
+                naviMain = [[FENavigationController alloc]initWithRootViewController:settingController];
             }
                 break;
             case 4:
             {
+                UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"温馨提示" message:@"注销成功！" delegate:self.inputViewController.self cancelButtonTitle:@"确定" otherButtonTitles:nil];
+                [alert show];
+                
+                LoginViewController *loginController = [[LoginViewController alloc]init];
+                naviMain = [[FENavigationController alloc]initWithRootViewController:loginController];
                 
             }
                 break;
             default:
                 break;
         }
+   // if (indexPath.row < 4) {
+        self.slideMenuVC.mainViewController = naviMain;
+  //  }
     
-    self.slideMenuVC.mainViewController = naviMain;
     
     //    if ([UIViewController class]) {
     //

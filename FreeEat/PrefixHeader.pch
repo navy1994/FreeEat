@@ -15,5 +15,8 @@
 #import "Public.h"
 #import "Masonry.h"
 #import "UIImage+UIColor.h"
+#import "DJRegisterView.h"
+#import "AppDelegate.h"
+#import "FENavigationController.h"
 
 #endif

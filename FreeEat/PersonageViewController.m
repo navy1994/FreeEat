@@ -10,6 +10,7 @@
 #import "PersonageBgView.h"
 #import "AppDelegate.h"
 #import "SettingViewController.h"
+#import "AKSegmentedControl.h"
 
 const CGFloat BackGroupHeight = 150;
 
@@ -21,6 +22,8 @@ const CGFloat BackGroupHeight = 150;
     
     UIButton *leftBtn;
     UIButton *rightBtn;
+    
+    AKSegmentedControl *_segmentedControl;
 }
 
 @end
@@ -29,16 +32,12 @@ const CGFloat BackGroupHeight = 150;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.view.backgroundColor = [UIColor colorWithRed:245.0/255.0 green:241.0/255.0 blue:239.0/255.0 alpha:1.0];
+    self.view.backgroundColor = RGBA(245, 241, 239, 1);
     self.automaticallyAdjustsScrollViewInsets=NO;
     [self.navigationController.navigationBar setShadowImage:[[UIImage alloc] init]];
 
     self.title = @"个人中心";
     
-    self.navigationController.navigationBar.translucent = NO;
-    self.navigationController.navigationBar.titleTextAttributes = [NSDictionary dictionaryWithObjectsAndKeys:[UIColor whiteColor],UITextAttributeTextColor,[UIFont fontWithName:@"Marion-Italic" size:20.0],UITextAttributeFont,nil];
-    self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
-//    self.navigationController.navigationBar.barTintColor = [UIColor colorWithRed:253.0/255.0 green:134.0/255.0 blue:111.0/255.0 alpha:1.0];
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc]initWithTitle:@"菜单" style:UIBarButtonItemStyleDone target:self action:@selector(selectLeftAction:)];
     
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithTitle:@"设置" style:UIBarButtonItemStyleDone target:self action:@selector(selectRightAction:)];
@@ -67,6 +66,87 @@ const CGFloat BackGroupHeight = 150;
     BGView=[[PersonageBgView alloc]initWithFrame:CGRectMake(0, -BackGroupHeight, screen_width, BackGroupHeight)];
     [_tableView addSubview:BGView];
     
+    UIView *segmentView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, screen_width, 45)];
+    segmentView.backgroundColor = RGBA(245, 241, 239, 1);
+    _tableView.tableHeaderView = segmentView;
+    
+    //初始化segment
+    _segmentedControl = [[AKSegmentedControl alloc] initWithFrame:CGRectMake(20, 5, screen_width-40, 35)];
+    [_segmentedControl addTarget:self action:@selector(segmentedControlValueChanged:) forControlEvents:UIControlEventValueChanged];
+    [_segmentedControl setSegmentedControlMode:AKSegmentedControlModeSticky];
+    [_segmentedControl setSelectedIndex:1];
+    _segmentedControl.layer.cornerRadius = 8;
+    _segmentedControl.layer.masksToBounds = YES;
+    _segmentedControl.layer.borderColor = RGBA(253, 134, 111, 1).CGColor;
+    _segmentedControl.layer.borderWidth = 2;
+    [segmentView addSubview:_segmentedControl];
+    
+    [self setupSegmentedControl];
+    
+}
+
+- (void)segmentedControlValueChanged:(id)sender
+{
+    AKSegmentedControl *segmentedControl = (AKSegmentedControl *)sender;
+    
+    
+}
+
+- (void)setupSegmentedControl{
+    UIImage *backgroundImage = [[UIImage imageWithColor:RGBA(245, 241, 239, 1)] resizableImageWithCapInsets:UIEdgeInsetsMake(10.0, 10.0, 10.0, 10.0)];
+    [_segmentedControl setBackgroundImage:backgroundImage];
+    [_segmentedControl setContentEdgeInsets:UIEdgeInsetsMake(2.0, 2.0, 3.0, 2.0)];
+    [_segmentedControl setAutoresizingMask:UIViewAutoresizingFlexibleRightMargin|UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleBottomMargin];
+    
+    [_segmentedControl setSeparatorImage:[UIImage imageWithColor:RGBA(253, 134, 111, 1)]];
+    
+    UIImage *buttonBackgroundImagePressedLeft = [[UIImage imageWithColor:RGBA(253, 134, 111, 1)]
+                                                 resizableImageWithCapInsets:UIEdgeInsetsMake(0.0, 4.0, 0.0, 1.0)];
+    UIImage *buttonBackgroundImagePressedCenter = [[UIImage imageWithColor:RGBA(253, 134, 111, 1)]
+                                                   resizableImageWithCapInsets:UIEdgeInsetsMake(0.0, 4.0, 0.0, 1.0)];
+    
+    // Button 1
+    UIButton *buttonSocial = [[UIButton alloc] init];
+    [buttonSocial setTitle:@"收藏历史" forState:UIControlStateNormal];
+    [buttonSocial setTitleColor:RGBA(253, 134, 111, 1) forState:UIControlStateNormal];
+    [buttonSocial setTitleColor:RGBA(245, 241, 239, 1) forState:UIControlStateSelected];
+    //[buttonSocial setTitleColor:RGBA(253, 134, 111, 1) forState:UIControlStateDisabled];
+    [buttonSocial setTitleShadowColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    [buttonSocial.titleLabel setShadowOffset:CGSizeMake(0.0, 1.0)];
+    [buttonSocial.titleLabel setFont:[UIFont fontWithName:@"HelveticaNeue-Bold" size:15.0]];
+    [buttonSocial setTitleEdgeInsets:UIEdgeInsetsMake(0.0, 5.0, 0.0, 0.0)];
+    
+    UIImage *buttonSocialImageNormal = [UIImage imageNamed:@"social-icon.png"];
+    [buttonSocial setBackgroundImage:buttonBackgroundImagePressedLeft forState:UIControlStateHighlighted];
+    [buttonSocial setBackgroundImage:buttonBackgroundImagePressedLeft forState:UIControlStateSelected];
+    [buttonSocial setBackgroundImage:buttonBackgroundImagePressedLeft forState:(UIControlStateHighlighted|UIControlStateSelected)];
+    [buttonSocial setImage:buttonSocialImageNormal forState:UIControlStateNormal];
+    [buttonSocial setImage:buttonSocialImageNormal forState:UIControlStateSelected];
+    [buttonSocial setImage:buttonSocialImageNormal forState:UIControlStateHighlighted];
+    [buttonSocial setImage:buttonSocialImageNormal forState:(UIControlStateHighlighted|UIControlStateSelected)];
+    
+    // Button 2
+    UIButton *buttonStar = [[UIButton alloc] init];
+    UIImage *buttonStarImageNormal = [UIImage imageNamed:@"star-icon.png"];
+    
+    [buttonStar setTitle:@"试吃历史" forState:UIControlStateNormal];
+    [buttonStar setTitleColor:RGBA(253, 134, 111, 1) forState:UIControlStateNormal];
+    [buttonStar setTitleColor:RGBA(245, 241, 239, 1) forState:UIControlStateSelected];
+    [buttonStar setTitleShadowColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    [buttonStar.titleLabel setShadowOffset:CGSizeMake(0.0, 1.0)];
+    [buttonStar.titleLabel setFont:[UIFont fontWithName:@"HelveticaNeue-Bold" size:15.0]];
+    [buttonStar setTitleEdgeInsets:UIEdgeInsetsMake(0.0, 5.0, 0.0, 0.0)];
+    
+    [buttonStar setBackgroundImage:buttonBackgroundImagePressedCenter forState:UIControlStateHighlighted];
+    [buttonStar setBackgroundImage:buttonBackgroundImagePressedCenter forState:UIControlStateSelected];
+    [buttonStar setBackgroundImage:buttonBackgroundImagePressedCenter forState:(UIControlStateHighlighted|UIControlStateSelected)];
+    [buttonStar setImage:buttonStarImageNormal forState:UIControlStateNormal];
+    [buttonStar setImage:buttonStarImageNormal forState:UIControlStateSelected];
+    [buttonStar setImage:buttonStarImageNormal forState:UIControlStateHighlighted];
+    [buttonStar setImage:buttonStarImageNormal forState:(UIControlStateHighlighted|UIControlStateSelected)];
+    
+    [_segmentedControl setButtonsArray:@[buttonSocial, buttonStar]];
+
 }
 
 -(void)selectLeftAction:(id)sender
@@ -79,6 +159,7 @@ const CGFloat BackGroupHeight = 150;
 -(void)selectRightAction:(id)sender
 {
     SettingViewController *settingController = [[SettingViewController alloc]init];
+    settingController.isMenu = NO;
     [self.navigationController pushViewController:settingController animated:YES];
     NSLog(@"rightClick");
 }

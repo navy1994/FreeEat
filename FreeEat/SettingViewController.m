@@ -9,7 +9,10 @@
 #import "SettingViewController.h"
 #import "AppDelegate.h"
 
-@interface SettingViewController ()
+@interface SettingViewController ()<UITableViewDataSource,UITableViewDelegate>
+
+@property (nonatomic, strong) UITableView *tableView;
+@property (nonatomic, strong) NSArray *strArray;
 
 @end
 
@@ -17,19 +20,49 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.view.backgroundColor = [UIColor colorWithRed:245.0/255.0 green:241.0/255.0 blue:239.0/255.0 alpha:1.0];
+    self.view.backgroundColor = RGBA(245, 241, 239, 1);
     self.title = @"设置";
-    self.navigationController.navigationBar.translucent = NO;
-    self.navigationController.navigationBar.titleTextAttributes = [NSDictionary dictionaryWithObjectsAndKeys:[UIColor whiteColor],UITextAttributeTextColor,[UIFont fontWithName:@"Marion-Italic" size:20.0],UITextAttributeFont,nil];
-    self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
-    self.navigationController.navigationBar.barTintColor = [UIColor colorWithRed:253.0/255.0 green:134.0/255.0 blue:111.0/255.0 alpha:1.0];
-    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc]initWithTitle:@"菜单" style:UIBarButtonItemStyleDone target:self action:@selector(selectLeftAction:)];
+    
+    if (self.isMenu) {
+        self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc]initWithTitle:@"菜单" style:UIBarButtonItemStyleDone target:self action:@selector(selectLeftAction:)];
+    }
+    
+    self.tableView = [[UITableView alloc]initWithFrame:[UIScreen mainScreen].bounds style:UITableViewStyleGrouped];
+    self.tableView.dataSource = self;
+    self.tableView.delegate = self;
+    [self.view addSubview:_tableView];
+    
+    self.strArray = @[@[@"清除本地缓存", @"去App Store写评价"], @[@"意见反馈", @"检查更新", @"关于Foretaste"], @[@"注销"]];
+    
 }
 
 -(void)selectLeftAction:(id)sender
 {
     [[AppDelegate mainDelegate].slideMenuVC toggleMenu];
 }
+
+#pragma mark ----- UITableViewDatabase
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
+    return _strArray.count;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    return [[_strArray objectAtIndex:section] count];
+}
+
+
+- (UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    static NSString *CellIndetifier = @"cell";
+    UITableViewCell *cell = (UITableViewCell*)[tableView dequeueReusableCellWithIdentifier:CellIndetifier];
+    
+    if (!cell) {
+        cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIndetifier];
+    }
+    cell.textLabel.text = [[_strArray objectAtIndex:indexPath.section]objectAtIndex:indexPath.row];
+    cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+    return cell;
+}
+
 
 
 - (void)didReceiveMemoryWarning {

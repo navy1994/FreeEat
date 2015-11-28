@@ -9,6 +9,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>AKSegmentedControl.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>DYMRollingBanner-DYMRollingBanner.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -72,27 +77,27 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>25B0FA76CA2FD6A8763E9AF949436192</key>
+		<key>1072895E04B321623AA35D8CD7D4E51B</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>2979B0B57C5145D9E3A3AD0D4FC91418</key>
+		<key>1C6EF3A858029BEF583873CEE0DCACD1</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>41CBB28E157BA506B0FAB31B78027B10</key>
+		<key>46C44B9AEB9E9AE2B80F639FA4B480ED</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>433A059D1D88C65F889B5E287E441F2F</key>
+		<key>48FF661A74E4A3089B2A358669BC9072</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>4A599126127B1568AC3F6EFB8BE2F79A</key>
+		<key>4AE9AA5A75A3EC42CE1093C11296359A</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -102,17 +107,17 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>66A11E341E5A4F73CA266A33B9E399EE</key>
+		<key>9ADA16C2B0393DAD5A245CBA12B87737</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>7E53674BF4E661DC5A01510ED1127BC0</key>
+		<key>9EB6B7548415211746B770C6509FCA61</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>99AEB031D7A5410C338CCECD93026155</key>
+		<key>A26A5C478D2172C91BD3EB40471FC102</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -127,12 +132,17 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>DABE7EFB869042330F29523242565CC5</key>
+		<key>D7DAF341F8F42B829D3E0BBD550AACAC</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
 		<key>EE00CB2467BA013FE37B2CAB7C9E7524</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>F2E0A08A7574EDE4AD5A96D4B7CE7DFA</key>
 		<dict>
 			<key>primary</key>
 			<true/>

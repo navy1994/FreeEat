@@ -7,6 +7,21 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		040EF52F1C0972D900B8168B /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 040EF52E1C0972D900B8168B /* LoginViewController.m */; };
+		040EF53A1C097AFF00B8168B /* DJRegisterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 040EF5321C097AFF00B8168B /* DJRegisterView.m */; };
+		040EF53B1C097AFF00B8168B /* dvq.png in Resources */ = {isa = PBXBuildFile; fileRef = 040EF5341C097AFF00B8168B /* dvq.png */; };
+		040EF53C1C097AFF00B8168B /* irn.png in Resources */ = {isa = PBXBuildFile; fileRef = 040EF5351C097AFF00B8168B /* irn.png */; };
+		040EF53D1C097AFF00B8168B /* irv.png in Resources */ = {isa = PBXBuildFile; fileRef = 040EF5361C097AFF00B8168B /* irv.png */; };
+		040EF53E1C097AFF00B8168B /* label_phone.png in Resources */ = {isa = PBXBuildFile; fileRef = 040EF5371C097AFF00B8168B /* label_phone.png */; };
+		040EF53F1C097AFF00B8168B /* textfield_activated_holo_light.9.png in Resources */ = {isa = PBXBuildFile; fileRef = 040EF5381C097AFF00B8168B /* textfield_activated_holo_light.9.png */; };
+		040EF5401C097AFF00B8168B /* textfield_default_holo_light.9.png in Resources */ = {isa = PBXBuildFile; fileRef = 040EF5391C097AFF00B8168B /* textfield_default_holo_light.9.png */; };
+		040EF5431C097D4D00B8168B /* RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 040EF5421C097D4D00B8168B /* RegisterViewController.m */; };
+		040EF5461C0980C300B8168B /* LookPassViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 040EF5451C0980C300B8168B /* LookPassViewController.m */; };
+		040EF5491C09814800B8168B /* FENavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 040EF5481C09814800B8168B /* FENavigationController.m */; };
+		040EF54C1C09933E00B8168B /* social-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 040EF54B1C09933E00B8168B /* social-icon.png */; };
+		040EF5501C09934E00B8168B /* social-icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 040EF54D1C09934E00B8168B /* social-icon@2x.png */; };
+		040EF5511C09934E00B8168B /* star-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 040EF54E1C09934E00B8168B /* star-icon.png */; };
+		040EF5521C09934E00B8168B /* star-icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 040EF54F1C09934E00B8168B /* star-icon@2x.png */; };
 		045855151C06A12A00EE1430 /* MenuHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 045855141C06A12A00EE1430 /* MenuHeaderView.m */; };
 		0458551B1C06A2A500EE1430 /* 0.png in Resources */ = {isa = PBXBuildFile; fileRef = 0458551A1C06A2A500EE1430 /* 0.png */; };
 		0458551F1C06A83900EE1430 /* advert1.png in Resources */ = {isa = PBXBuildFile; fileRef = 0458551C1C06A83900EE1430 /* advert1.png */; };
@@ -42,6 +57,26 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		040EF52D1C0972D900B8168B /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		040EF52E1C0972D900B8168B /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		040EF5311C097AFF00B8168B /* DJRegisterView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DJRegisterView.h; sourceTree = "<group>"; };
+		040EF5321C097AFF00B8168B /* DJRegisterView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DJRegisterView.m; sourceTree = "<group>"; };
+		040EF5341C097AFF00B8168B /* dvq.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dvq.png; sourceTree = "<group>"; };
+		040EF5351C097AFF00B8168B /* irn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = irn.png; sourceTree = "<group>"; };
+		040EF5361C097AFF00B8168B /* irv.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = irv.png; sourceTree = "<group>"; };
+		040EF5371C097AFF00B8168B /* label_phone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = label_phone.png; sourceTree = "<group>"; };
+		040EF5381C097AFF00B8168B /* textfield_activated_holo_light.9.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = textfield_activated_holo_light.9.png; sourceTree = "<group>"; };
+		040EF5391C097AFF00B8168B /* textfield_default_holo_light.9.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = textfield_default_holo_light.9.png; sourceTree = "<group>"; };
+		040EF5411C097D4D00B8168B /* RegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegisterViewController.h; sourceTree = "<group>"; };
+		040EF5421C097D4D00B8168B /* RegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegisterViewController.m; sourceTree = "<group>"; };
+		040EF5441C0980C300B8168B /* LookPassViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LookPassViewController.h; sourceTree = "<group>"; };
+		040EF5451C0980C300B8168B /* LookPassViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LookPassViewController.m; sourceTree = "<group>"; };
+		040EF5471C09814800B8168B /* FENavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FENavigationController.h; sourceTree = "<group>"; };
+		040EF5481C09814800B8168B /* FENavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FENavigationController.m; sourceTree = "<group>"; };
+		040EF54B1C09933E00B8168B /* social-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "social-icon.png"; sourceTree = "<group>"; };
+		040EF54D1C09934E00B8168B /* social-icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "social-icon@2x.png"; sourceTree = "<group>"; };
+		040EF54E1C09934E00B8168B /* star-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "star-icon.png"; sourceTree = "<group>"; };
+		040EF54F1C09934E00B8168B /* star-icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "star-icon@2x.png"; sourceTree = "<group>"; };
 		045855111C06A08500EE1430 /* Public.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Public.h; sourceTree = "<group>"; };
 		045855121C06A09800EE1430 /* PrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		045855131C06A12A00EE1430 /* MenuHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuHeaderView.h; sourceTree = "<group>"; };
@@ -104,6 +139,53 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		040EF52C1C0972A300B8168B /* Login&Register */ = {
+			isa = PBXGroup;
+			children = (
+				040EF52D1C0972D900B8168B /* LoginViewController.h */,
+				040EF52E1C0972D900B8168B /* LoginViewController.m */,
+				040EF5411C097D4D00B8168B /* RegisterViewController.h */,
+				040EF5421C097D4D00B8168B /* RegisterViewController.m */,
+				040EF5441C0980C300B8168B /* LookPassViewController.h */,
+				040EF5451C0980C300B8168B /* LookPassViewController.m */,
+			);
+			name = "Login&Register";
+			sourceTree = "<group>";
+		};
+		040EF5301C097AFF00B8168B /* DJRegisterView */ = {
+			isa = PBXGroup;
+			children = (
+				040EF5311C097AFF00B8168B /* DJRegisterView.h */,
+				040EF5321C097AFF00B8168B /* DJRegisterView.m */,
+				040EF5331C097AFF00B8168B /* images */,
+			);
+			path = DJRegisterView;
+			sourceTree = "<group>";
+		};
+		040EF5331C097AFF00B8168B /* images */ = {
+			isa = PBXGroup;
+			children = (
+				040EF5341C097AFF00B8168B /* dvq.png */,
+				040EF5351C097AFF00B8168B /* irn.png */,
+				040EF5361C097AFF00B8168B /* irv.png */,
+				040EF5371C097AFF00B8168B /* label_phone.png */,
+				040EF5381C097AFF00B8168B /* textfield_activated_holo_light.9.png */,
+				040EF5391C097AFF00B8168B /* textfield_default_holo_light.9.png */,
+			);
+			path = images;
+			sourceTree = "<group>";
+		};
+		040EF54A1C09932C00B8168B /* segmentImage */ = {
+			isa = PBXGroup;
+			children = (
+				040EF54B1C09933E00B8168B /* social-icon.png */,
+				040EF54D1C09934E00B8168B /* social-icon@2x.png */,
+				040EF54E1C09934E00B8168B /* star-icon.png */,
+				040EF54F1C09934E00B8168B /* star-icon@2x.png */,
+			);
+			name = segmentImage;
+			sourceTree = "<group>";
+		};
 		045855081C069F9900EE1430 /* Menu */ = {
 			isa = PBXGroup;
 			children = (
@@ -125,6 +207,8 @@
 		0458550A1C069FE200EE1430 /* OtherControllers */ = {
 			isa = PBXGroup;
 			children = (
+				040EF5471C09814800B8168B /* FENavigationController.h */,
+				040EF5481C09814800B8168B /* FENavigationController.m */,
 			);
 			name = OtherControllers;
 			sourceTree = "<group>";
@@ -177,6 +261,7 @@
 		045855101C06A07300EE1430 /* publicClass */ = {
 			isa = PBXGroup;
 			children = (
+				040EF5301C097AFF00B8168B /* DJRegisterView */,
 				045855111C06A08500EE1430 /* Public.h */,
 			);
 			name = publicClass;
@@ -185,6 +270,7 @@
 		045855161C06A26300EE1430 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				040EF54A1C09932C00B8168B /* segmentImage */,
 				045855191C06A28D00EE1430 /* UserImages */,
 				045855181C06A27D00EE1430 /* MainImages */,
 				045855171C06A27300EE1430 /* MenuImages */,
@@ -267,6 +353,7 @@
 		047DCB121C05938000AF9976 /* FreeEat */ = {
 			isa = PBXGroup;
 			children = (
+				040EF52C1C0972A300B8168B /* Login&Register */,
 				045855271C06AF7100EE1430 /* Setting */,
 				045855261C06AF6200EE1430 /* Personage */,
 				045855251C06AF2200EE1430 /* Foretaste */,
@@ -417,11 +504,21 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				040EF5521C09934E00B8168B /* star-icon@2x.png in Resources */,
+				040EF5511C09934E00B8168B /* star-icon.png in Resources */,
 				0458551B1C06A2A500EE1430 /* 0.png in Resources */,
 				047DCB221C05938000AF9976 /* Main.storyboard in Resources */,
+				040EF5501C09934E00B8168B /* social-icon@2x.png in Resources */,
 				045855201C06A83900EE1430 /* advert2.png in Resources */,
+				040EF53C1C097AFF00B8168B /* irn.png in Resources */,
 				0458551F1C06A83900EE1430 /* advert1.png in Resources */,
+				040EF53D1C097AFF00B8168B /* irv.png in Resources */,
 				045855211C06A83900EE1430 /* advert3.png in Resources */,
+				040EF54C1C09933E00B8168B /* social-icon.png in Resources */,
+				040EF53F1C097AFF00B8168B /* textfield_activated_holo_light.9.png in Resources */,
+				040EF53E1C097AFF00B8168B /* label_phone.png in Resources */,
+				040EF5401C097AFF00B8168B /* textfield_default_holo_light.9.png in Resources */,
+				040EF53B1C097AFF00B8168B /* dvq.png in Resources */,
 				047DCB271C05938000AF9976 /* LaunchScreen.xib in Resources */,
 				047DCB241C05938000AF9976 /* Images.xcassets in Resources */,
 			);
@@ -474,12 +571,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				040EF5491C09814800B8168B /* FENavigationController.m in Sources */,
 				047DCB191C05938000AF9976 /* AppDelegate.m in Sources */,
+				040EF5461C0980C300B8168B /* LookPassViewController.m in Sources */,
 				0458552D1C06AFE200EE1430 /* PersonageViewController.m in Sources */,
 				047DCB4D1C05A59400AF9976 /* MainViewController.m in Sources */,
 				045855361C06DF0600EE1430 /* ForetasteCollectionViewCell.m in Sources */,
+				040EF52F1C0972D900B8168B /* LoginViewController.m in Sources */,
 				045855151C06A12A00EE1430 /* MenuHeaderView.m in Sources */,
 				045855301C06AFF500EE1430 /* ForetasteViewController.m in Sources */,
+				040EF5431C097D4D00B8168B /* RegisterViewController.m in Sources */,
 				047DCB1C1C05938000AF9976 /* FreeEat.xcdatamodeld in Sources */,
 				047DCB161C05938000AF9976 /* main.m in Sources */,
 				0458552A1C06AFCE00EE1430 /* SettingViewController.m in Sources */,
@@ -487,6 +588,7 @@
 				045855241C06A8F300EE1430 /* MainTableViewCell.m in Sources */,
 				047DCB471C05A1C800AF9976 /* UIImage+UIColor.m in Sources */,
 				045855391C06EDE700EE1430 /* PersonageBgView.m in Sources */,
+				040EF53A1C097AFF00B8168B /* DJRegisterView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -615,10 +717,12 @@
 			baseConfigurationReference = DA0B126A5B9AFB7F72363B49 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Linhai Shen (RRQ8V6YY29)";
 				GCC_PREFIX_HEADER = "/Users/mac/Desktop/公司有关/FreeEat/FreeEat/PrefixHeader.pch";
 				INFOPLIST_FILE = FreeEat/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "5fd1d638-45db-411f-baca-cccc93fc02ab";
 			};
 			name = Debug;
 		};
@@ -627,10 +731,12 @@
 			baseConfigurationReference = 1ECF3BD5921A2B11880D15DC /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Linhai Shen (RRQ8V6YY29)";
 				GCC_PREFIX_HEADER = "/Users/mac/Desktop/公司有关/FreeEat/FreeEat/PrefixHeader.pch";
 				INFOPLIST_FILE = FreeEat/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "5fd1d638-45db-411f-baca-cccc93fc02ab";
 			};
 			name = Release;
 		};

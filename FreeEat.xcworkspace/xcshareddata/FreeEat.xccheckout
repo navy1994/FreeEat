@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>F6CCA2D8-57A8-427B-9BCB-89FFBB5430EA</string>
+	<key>IDESourceControlProjectName</key>
+	<string>FreeEat</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>EDFB60556E0C6201A64B872BEC6386A6CEDBA62D</key>
+		<string>github.com:navy1994/FreeEat.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>FreeEat.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>EDFB60556E0C6201A64B872BEC6386A6CEDBA62D</key>
+		<string>..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>github.com:navy1994/FreeEat.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>EDFB60556E0C6201A64B872BEC6386A6CEDBA62D</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>EDFB60556E0C6201A64B872BEC6386A6CEDBA62D</string>
+			<key>IDESourceControlWCCName</key>
+			<string>FreeEat</string>
+		</dict>
+	</array>
+</dict>
+</plist>
