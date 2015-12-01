@@ -43,6 +43,8 @@
 		047DCB411C05983200AF9976 /* MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 047DCB401C05983200AF9976 /* MenuViewController.m */; };
 		047DCB471C05A1C800AF9976 /* UIImage+UIColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 047DCB461C05A1C800AF9976 /* UIImage+UIColor.m */; };
 		047DCB4D1C05A59400AF9976 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 047DCB4C1C05A59400AF9976 /* MainViewController.m */; };
+		048A17151C0BF4DE002D87E9 /* MainDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 048A17141C0BF4DE002D87E9 /* MainDetailViewController.m */; };
+		048A17181C0C36DD002D87E9 /* ForetasteDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 048A17171C0C36DD002D87E9 /* ForetasteDetailViewController.m */; };
 		28CC836DE3E3646B033F0FD7 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9434C52204846167E07E2BCF /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -115,6 +117,10 @@
 		047DCB461C05A1C800AF9976 /* UIImage+UIColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+UIColor.m"; sourceTree = "<group>"; };
 		047DCB4B1C05A59400AF9976 /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
 		047DCB4C1C05A59400AF9976 /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
+		048A17131C0BF4DE002D87E9 /* MainDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainDetailViewController.h; sourceTree = "<group>"; };
+		048A17141C0BF4DE002D87E9 /* MainDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainDetailViewController.m; sourceTree = "<group>"; };
+		048A17161C0C36DD002D87E9 /* ForetasteDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ForetasteDetailViewController.h; sourceTree = "<group>"; };
+		048A17171C0C36DD002D87E9 /* ForetasteDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ForetasteDetailViewController.m; sourceTree = "<group>"; };
 		1ECF3BD5921A2B11880D15DC /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		9434C52204846167E07E2BCF /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA0B126A5B9AFB7F72363B49 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
@@ -200,6 +206,8 @@
 			children = (
 				047DCB4B1C05A59400AF9976 /* MainViewController.h */,
 				047DCB4C1C05A59400AF9976 /* MainViewController.m */,
+				048A17131C0BF4DE002D87E9 /* MainDetailViewController.h */,
+				048A17141C0BF4DE002D87E9 /* MainDetailViewController.m */,
 			);
 			name = Main;
 			sourceTree = "<group>";
@@ -308,6 +316,8 @@
 			children = (
 				0458552E1C06AFF500EE1430 /* ForetasteViewController.h */,
 				0458552F1C06AFF500EE1430 /* ForetasteViewController.m */,
+				048A17161C0C36DD002D87E9 /* ForetasteDetailViewController.h */,
+				048A17171C0C36DD002D87E9 /* ForetasteDetailViewController.m */,
 			);
 			name = Foretaste;
 			sourceTree = "<group>";
@@ -572,6 +582,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				040EF5491C09814800B8168B /* FENavigationController.m in Sources */,
+				048A17151C0BF4DE002D87E9 /* MainDetailViewController.m in Sources */,
 				047DCB191C05938000AF9976 /* AppDelegate.m in Sources */,
 				040EF5461C0980C300B8168B /* LookPassViewController.m in Sources */,
 				0458552D1C06AFE200EE1430 /* PersonageViewController.m in Sources */,
@@ -587,6 +598,7 @@
 				047DCB411C05983200AF9976 /* MenuViewController.m in Sources */,
 				045855241C06A8F300EE1430 /* MainTableViewCell.m in Sources */,
 				047DCB471C05A1C800AF9976 /* UIImage+UIColor.m in Sources */,
+				048A17181C0C36DD002D87E9 /* ForetasteDetailViewController.m in Sources */,
 				045855391C06EDE700EE1430 /* PersonageBgView.m in Sources */,
 				040EF53A1C097AFF00B8168B /* DJRegisterView.m in Sources */,
 			);

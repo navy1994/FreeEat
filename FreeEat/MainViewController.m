@@ -10,6 +10,7 @@
 #import "AppDelegate.h"
 #import <DYMRollingBanner/DYMRollingBannerVC.h>
 #import "MainTableViewCell.h"
+#import "MainDetailViewController.h"
 
 const CGFloat LSWHeaderViewHeight = 200;
 
@@ -21,25 +22,32 @@ const CGFloat LSWHeaderViewHeight = 200;
     MASConstraint *_headerViewHeightConstraint;//高的约束
 }
 @property (nonatomic, strong) UITableView *tableView;
+
+@property (nonatomic, strong) NSDictionary *listDictionary;
+
+
 @end
 
 @implementation MainViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
     self.view.backgroundColor = [UIColor colorWithRed:245.0/255.0 green:241.0/255.0 blue:239.0/255.0 alpha:1.0];
     self.title = @"推荐";
 
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc]initWithTitle:@"菜单" style:UIBarButtonItemStyleDone target:self action:@selector(selectLeftAction:)];
     
     [self setupUI];
+    
+    self.listDictionary = @{@"imgName":@"advert2",@"name":@"循疾问食｜商品名",@"tags":@"商品*************"};
 }
 
 - (void)setupUI{
 //    [self.navigationController.navigationBar setBackgroundImage:[UIImage imageWithColor:[[UIColor clearColor] colorWithAlphaComponent:0]] forBarMetrics:UIBarMetricsDefault];
 //    self.automaticallyAdjustsScrollViewInsets=NO;
 //    [self.navigationController.navigationBar setShadowImage:[[UIImage alloc] init]];
-    self.tableView = [[UITableView alloc]initWithFrame:[UIScreen mainScreen].bounds style:UITableViewStyleGrouped];
+    self.tableView = [[UITableView alloc]initWithFrame:CGRectMake(0, 0, screen_width, screen_height-20) style:UITableViewStyleGrouped];
     _tableView.showsVerticalScrollIndicator =
     NO;
     [_tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"cell"];
@@ -73,10 +81,9 @@ const CGFloat LSWHeaderViewHeight = 200;
                                       ];
     
     [_rollingBannerVC addBannerTapHandler:^(NSInteger whichIndex) {
-//        TapAdvertViewController *tapViewController = [[TapAdvertViewController alloc]init];
-//        
-//        [self.navigationItem.titleView setHidden:YES];
-//        [self.navigationController pushViewController:tapViewController animated:YES];
+        MainDetailViewController *tapViewController = [[MainDetailViewController alloc]init];
+        tapViewController.dic = self.listDictionary;
+        [self.navigationController pushViewController:tapViewController animated:YES];
         
     }];
     [_rollingBannerVC startRolling];
@@ -93,7 +100,7 @@ const CGFloat LSWHeaderViewHeight = 200;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return 300;
+    return 310;
 }
 
 - (MainTableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -102,10 +109,17 @@ const CGFloat LSWHeaderViewHeight = 200;
     if (cell == nil) {
         cell = [[MainTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIndentifier];
     }
-    
+    cell.commodityImageView.image = [UIImage imageNamed:[_listDictionary objectForKey:@"imgName"]];
+    cell.commodityName.text = [_listDictionary objectForKey:@"name"];
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     return cell;
 
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    MainDetailViewController *detailController = [[MainDetailViewController alloc]init];
+    detailController.dic = self.listDictionary;
+    [self.navigationController pushViewController:detailController animated:YES];
 }
 
 -(void)scrollViewDidScroll:(UIScrollView *)scrollView

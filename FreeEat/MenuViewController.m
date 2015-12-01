@@ -35,6 +35,8 @@
     self.tableView.dataSource = self;
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     self.tableView.backgroundColor = [UIColor clearColor];
+    //默认选中第一行
+    
     [self.tableView reloadData];
     [self.view addSubview:self.tableView];
     
@@ -73,11 +75,23 @@
     UIFont *correctFont = [UIFont fontWithName:currentFont.fontName size:currentFont.pointSize+5];
     cell.textLabel.font = correctFont;
     
-    cell.textLabel.textColor = [UIColor grayColor];
-//    cell.imageView.image = [UIImage imageNamed:[images objectAtIndex:indexPath.row]];
-    cell.contentView.backgroundColor = [UIColor clearColor];
-    cell.selectionStyle = UITableViewCellSelectionStyleNone;
+    if (indexPath.row) {
+        cell.textLabel.textColor = [UIColor grayColor];
+    }else{
+        cell.textLabel.textColor = RGBA(253, 134, 111, 1);
+    }
     
+//    cell.imageView.image = [UIImage imageNamed:[images objectAtIndex:indexPath.row]];
+    
+    NSIndexPath *firstPath = [NSIndexPath indexPathForRow:0 inSection:0];
+    [self.tableView selectRowAtIndexPath:firstPath animated:YES scrollPosition:UITableViewScrollPositionTop];
+   
+    //选中背景自定义
+    cell.selectedBackgroundView=[[UIImageView alloc]initWithImage:[UIImage imageWithColor:[UIColor whiteColor]]];
+    
+    cell.contentView.backgroundColor = [UIColor clearColor];
+    //cell.selectionStyle = UITableViewCellSelectionStyleNone;
+    cell.selectionStyle = UITableViewCellSelectionStyleBlue;
     return cell;
 }
 
@@ -85,7 +99,17 @@
     [cell setBackgroundColor:[UIColor clearColor]];
 }
 
+- (void)tableView:(UITableView *)tableView didDeselectRowAtIndexPath:(NSIndexPath *)indexPath {
+    NSLog(@"deselect:%ld",(long)indexPath.row);
+    UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
+    cell.textLabel.textColor = [UIColor grayColor];
+}
+
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    NSLog(@"select:%ld",(long)indexPath.row);
+    //NSIndexPath *indexPath = [tableView indexPathForSelectedRow];
+    UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
+    cell.textLabel.textColor = RGBA(253, 134, 111, 1);
     
     [[AppDelegate mainDelegate] ChageViewController:indexPath];
 }

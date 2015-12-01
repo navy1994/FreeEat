@@ -43,6 +43,11 @@
     
     self.slideMenuVC.menuViewController = menuViewController;
     self.slideMenuVC.mainViewController = navigation;
+    //设置view阴影
+    self.slideMenuVC.mainViewController.view.layer.shadowColor = [UIColor blackColor].CGColor;
+    self.slideMenuVC.mainViewController.view.layer.shadowOffset = CGSizeMake(-3, -3);
+    self.slideMenuVC.mainViewController.view.layer.shadowOpacity = 0.5;
+    self.slideMenuVC.mainViewController.view.layer.shadowRadius = 5;
     
     self.slideMenuVC.backgroundImage = [UIImage imageWithColor:[UIColor colorWithRed:245.0/255.0 green:241.0/255.0 blue:239.0/255.0 alpha:1.0]];
     self.slideMenuVC.backgroundImageContentMode = UIViewContentModeScaleAspectFill;
@@ -105,6 +110,12 @@
         }
    // if (indexPath.row < 4) {
         self.slideMenuVC.mainViewController = naviMain;
+    
+    //设置view阴影
+    self.slideMenuVC.mainViewController.view.layer.shadowColor = [UIColor blackColor].CGColor;
+    self.slideMenuVC.mainViewController.view.layer.shadowOffset = CGSizeMake(-3, -3);
+    self.slideMenuVC.mainViewController.view.layer.shadowOpacity = 0.5;
+    self.slideMenuVC.mainViewController.view.layer.shadowRadius = 5;
   //  }
     
     

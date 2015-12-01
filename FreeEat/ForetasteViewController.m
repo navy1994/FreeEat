@@ -9,6 +9,7 @@
 #import "ForetasteViewController.h"
 #import "AppDelegate.h"
 #import "ForetasteCollectionViewCell.h"
+#import "ForetasteDetailViewController.h"
 
 @interface ForetasteViewController ()<UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout>
 
@@ -95,6 +96,8 @@
 //UICollectionView被选中时调用的方法
 -(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
+    ForetasteDetailViewController *detailController = [[ForetasteDetailViewController alloc]init];
+    [self.navigationController pushViewController:detailController animated:YES];
    
 }
 //返回这个UICollectionView是否可以被选择

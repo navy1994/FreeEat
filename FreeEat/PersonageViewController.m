@@ -74,11 +74,10 @@ const CGFloat BackGroupHeight = 150;
     _segmentedControl = [[AKSegmentedControl alloc] initWithFrame:CGRectMake(20, 5, screen_width-40, 35)];
     [_segmentedControl addTarget:self action:@selector(segmentedControlValueChanged:) forControlEvents:UIControlEventValueChanged];
     [_segmentedControl setSegmentedControlMode:AKSegmentedControlModeSticky];
-    [_segmentedControl setSelectedIndex:1];
+    [_segmentedControl setSelectedIndex:0];
     _segmentedControl.layer.cornerRadius = 8;
     _segmentedControl.layer.masksToBounds = YES;
-    _segmentedControl.layer.borderColor = RGBA(253, 134, 111, 1).CGColor;
-    _segmentedControl.layer.borderWidth = 2;
+    
     [segmentView addSubview:_segmentedControl];
     
     [self setupSegmentedControl];
@@ -107,16 +106,18 @@ const CGFloat BackGroupHeight = 150;
     
     // Button 1
     UIButton *buttonSocial = [[UIButton alloc] init];
+    UIImage *buttonSocialImageNormal = [UIImage imageNamed:@"star-icon.png"];
+    buttonSocial.layer.borderColor = RGBA(253, 134, 111, 1).CGColor;
+    buttonSocial.layer.borderWidth = 2;
     [buttonSocial setTitle:@"收藏历史" forState:UIControlStateNormal];
     [buttonSocial setTitleColor:RGBA(253, 134, 111, 1) forState:UIControlStateNormal];
     [buttonSocial setTitleColor:RGBA(245, 241, 239, 1) forState:UIControlStateSelected];
     //[buttonSocial setTitleColor:RGBA(253, 134, 111, 1) forState:UIControlStateDisabled];
-    [buttonSocial setTitleShadowColor:[UIColor whiteColor] forState:UIControlStateNormal];
-    [buttonSocial.titleLabel setShadowOffset:CGSizeMake(0.0, 1.0)];
+    //[buttonSocial setTitleShadowColor:RGBA(245, 241, 239, 1) forState:UIControlStateNormal];
+    //[buttonSocial.titleLabel setShadowOffset:CGSizeMake(0.0, 1.0)];
     [buttonSocial.titleLabel setFont:[UIFont fontWithName:@"HelveticaNeue-Bold" size:15.0]];
     [buttonSocial setTitleEdgeInsets:UIEdgeInsetsMake(0.0, 5.0, 0.0, 0.0)];
     
-    UIImage *buttonSocialImageNormal = [UIImage imageNamed:@"social-icon.png"];
     [buttonSocial setBackgroundImage:buttonBackgroundImagePressedLeft forState:UIControlStateHighlighted];
     [buttonSocial setBackgroundImage:buttonBackgroundImagePressedLeft forState:UIControlStateSelected];
     [buttonSocial setBackgroundImage:buttonBackgroundImagePressedLeft forState:(UIControlStateHighlighted|UIControlStateSelected)];
@@ -127,7 +128,9 @@ const CGFloat BackGroupHeight = 150;
     
     // Button 2
     UIButton *buttonStar = [[UIButton alloc] init];
-    UIImage *buttonStarImageNormal = [UIImage imageNamed:@"star-icon.png"];
+    buttonStar.layer.borderColor = RGBA(253, 134, 111, 1).CGColor;
+    buttonStar.layer.borderWidth = 2;
+    UIImage *buttonStarImageNormal = [UIImage imageNamed:@"social-icon.png"];
     
     [buttonStar setTitle:@"试吃历史" forState:UIControlStateNormal];
     [buttonStar setTitleColor:RGBA(253, 134, 111, 1) forState:UIControlStateNormal];

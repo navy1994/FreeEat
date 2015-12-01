@@ -12,5 +12,8 @@
 
 @property (nonatomic, strong) UIImageView *commodityImageView;
 @property (nonatomic, strong) UILabel *commodityName;
+@property (nonatomic, strong) UILabel *classifyLabel;
+@property (nonatomic, strong) UILabel *priceLabel;
+@property (nonatomic, strong) UILabel *distanceLabel;
 
 @end
