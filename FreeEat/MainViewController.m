@@ -36,7 +36,7 @@ const CGFloat LSWHeaderViewHeight = 200;
     self.view.backgroundColor = [UIColor colorWithRed:245.0/255.0 green:241.0/255.0 blue:239.0/255.0 alpha:1.0];
     self.title = @"推荐";
 
-    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc]initWithTitle:@"菜单" style:UIBarButtonItemStyleDone target:self action:@selector(selectLeftAction:)];
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed:@"menu-ico"] style:UIBarButtonItemStyleDone target:self action:@selector(selectLeftAction:)];
     
     [self setupUI];
     
@@ -47,7 +47,7 @@ const CGFloat LSWHeaderViewHeight = 200;
 //    [self.navigationController.navigationBar setBackgroundImage:[UIImage imageWithColor:[[UIColor clearColor] colorWithAlphaComponent:0]] forBarMetrics:UIBarMetricsDefault];
 //    self.automaticallyAdjustsScrollViewInsets=NO;
 //    [self.navigationController.navigationBar setShadowImage:[[UIImage alloc] init]];
-    self.tableView = [[UITableView alloc]initWithFrame:CGRectMake(0, 0, screen_width, screen_height-20) style:UITableViewStyleGrouped];
+    self.tableView = [[UITableView alloc]initWithFrame:CGRectMake(0, 0, screen_width, screen_height-30) style:UITableViewStyleGrouped];
     _tableView.showsVerticalScrollIndicator =
     NO;
     [_tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"cell"];

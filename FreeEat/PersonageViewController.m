@@ -38,9 +38,9 @@ const CGFloat BackGroupHeight = 150;
 
     self.title = @"个人中心";
     
-    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc]initWithTitle:@"菜单" style:UIBarButtonItemStyleDone target:self action:@selector(selectLeftAction:)];
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed:@"menu-ico"] style:UIBarButtonItemStyleDone target:self action:@selector(selectLeftAction:)];
     
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithTitle:@"设置" style:UIBarButtonItemStyleDone target:self action:@selector(selectRightAction:)];
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed:@"setting-ico"] style:UIBarButtonItemStyleDone target:self action:@selector(selectRightAction:)];
     
     [self setupUI];
 }
@@ -106,7 +106,8 @@ const CGFloat BackGroupHeight = 150;
     
     // Button 1
     UIButton *buttonSocial = [[UIButton alloc] init];
-    UIImage *buttonSocialImageNormal = [UIImage imageNamed:@"star-icon.png"];
+    UIImage *buttonSocialImageNormal = [UIImage imageNamed:@"collect-ico"];
+    UIImage *buttonSocialImageSelect = [UIImage imageNamed:@"collect-ico_selected"];
     buttonSocial.layer.borderColor = RGBA(253, 134, 111, 1).CGColor;
     buttonSocial.layer.borderWidth = 2;
     [buttonSocial setTitle:@"收藏历史" forState:UIControlStateNormal];
@@ -122,7 +123,7 @@ const CGFloat BackGroupHeight = 150;
     [buttonSocial setBackgroundImage:buttonBackgroundImagePressedLeft forState:UIControlStateSelected];
     [buttonSocial setBackgroundImage:buttonBackgroundImagePressedLeft forState:(UIControlStateHighlighted|UIControlStateSelected)];
     [buttonSocial setImage:buttonSocialImageNormal forState:UIControlStateNormal];
-    [buttonSocial setImage:buttonSocialImageNormal forState:UIControlStateSelected];
+    [buttonSocial setImage:buttonSocialImageSelect forState:UIControlStateSelected];
     [buttonSocial setImage:buttonSocialImageNormal forState:UIControlStateHighlighted];
     [buttonSocial setImage:buttonSocialImageNormal forState:(UIControlStateHighlighted|UIControlStateSelected)];
     
@@ -130,7 +131,8 @@ const CGFloat BackGroupHeight = 150;
     UIButton *buttonStar = [[UIButton alloc] init];
     buttonStar.layer.borderColor = RGBA(253, 134, 111, 1).CGColor;
     buttonStar.layer.borderWidth = 2;
-    UIImage *buttonStarImageNormal = [UIImage imageNamed:@"social-icon.png"];
+    UIImage *buttonStarImageNormal = [UIImage imageNamed:@"clock-ico"];
+    UIImage *buttonStarImageSelect = [UIImage imageNamed:@"clock-ico_selected@3x"];
     
     [buttonStar setTitle:@"试吃历史" forState:UIControlStateNormal];
     [buttonStar setTitleColor:RGBA(253, 134, 111, 1) forState:UIControlStateNormal];
@@ -144,7 +146,7 @@ const CGFloat BackGroupHeight = 150;
     [buttonStar setBackgroundImage:buttonBackgroundImagePressedCenter forState:UIControlStateSelected];
     [buttonStar setBackgroundImage:buttonBackgroundImagePressedCenter forState:(UIControlStateHighlighted|UIControlStateSelected)];
     [buttonStar setImage:buttonStarImageNormal forState:UIControlStateNormal];
-    [buttonStar setImage:buttonStarImageNormal forState:UIControlStateSelected];
+    [buttonStar setImage:buttonStarImageSelect forState:UIControlStateSelected];
     [buttonStar setImage:buttonStarImageNormal forState:UIControlStateHighlighted];
     [buttonStar setImage:buttonStarImageNormal forState:(UIControlStateHighlighted|UIControlStateSelected)];
     

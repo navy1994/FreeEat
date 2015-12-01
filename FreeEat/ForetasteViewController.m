@@ -10,6 +10,7 @@
 #import "AppDelegate.h"
 #import "ForetasteCollectionViewCell.h"
 #import "ForetasteDetailViewController.h"
+#import "LocationCityViewController.h"
 
 @interface ForetasteViewController ()<UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout>
 
@@ -23,7 +24,19 @@
     self.view.backgroundColor = [UIColor colorWithRed:245.0/255.0 green:241.0/255.0 blue:239.0/255.0 alpha:1.0];
     self.title = @"试吃";
 
-    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc]initWithTitle:@"菜单" style:UIBarButtonItemStyleDone target:self action:@selector(selectLeftAction:)];
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed:@"menu-ico"] style:UIBarButtonItemStyleDone target:self action:@selector(selectLeftAction:)];
+    
+    UIButton *distaceBtn = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 60, 30)];
+    [distaceBtn setTitle:@"上海" forState:UIControlStateNormal];
+    [distaceBtn.titleLabel setFont:[UIFont fontWithName:@"HelveticaNeue-Bold" size:15.0]];
+    [distaceBtn setTitleEdgeInsets:UIEdgeInsetsMake(0.0, 5.0, 0.0, 0.0)];
+    [distaceBtn setBackgroundColor:[UIColor clearColor]];
+    [distaceBtn setImage:[UIImage imageNamed:@"distance-ico_selected"] forState:UIControlStateNormal];
+    [distaceBtn addTarget:self action:@selector(clickRightBtn:) forControlEvents:UIControlEventTouchUpInside];
+    UIBarButtonItem *rightItem = [[UIBarButtonItem alloc]initWithCustomView:distaceBtn];
+    
+    self.navigationItem.rightBarButtonItem = rightItem;
+
     
     /**
      *  瀑布流
@@ -48,6 +61,11 @@
 -(void)selectLeftAction:(id)sender
 {
     [[AppDelegate mainDelegate].slideMenuVC toggleMenu];
+}
+
+- (void)clickRightBtn:(id)sender{
+    LocationCityViewController *locationViewController = [[LocationCityViewController alloc]init];
+    [self.navigationController pushViewController:locationViewController animated:YES];
 }
 
 #pragma mark -- UICollectionViewDataSource

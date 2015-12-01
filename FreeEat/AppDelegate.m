@@ -16,11 +16,12 @@
 #import "MenuViewController.h"
 #import "UIImage+UIColor.h"
 
+#import <CoreLocation/CoreLocation.h>
 
 
 @interface AppDelegate ()<HKSlideMenu3DControllerDelegate>{
 }
-
+@property (nonatomic, strong) CLLocationManager *locationManager;
 @end
 
 @implementation AppDelegate
@@ -57,7 +58,19 @@
     
     self.window.rootViewController = self.slideMenuVC;
     [self.window makeKeyAndVisible];
+    
+    
+     [self initLocation];
     return YES;
+}
+
+- (void)initLocation {
+    CLLocationManager *manager = [[CLLocationManager alloc] init];
+    self.locationManager = manager;
+    if ([manager respondsToSelector:@selector(requestWhenInUseAuthorization)]) {
+        [manager performSelector:@selector(requestWhenInUseAuthorization)];
+    }
+    [manager startUpdatingLocation];
 }
 
 + (AppDelegate *)mainDelegate {

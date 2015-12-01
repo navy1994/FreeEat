@@ -8,6 +8,11 @@
 
 #import "MainTableViewCell.h"
 
+@interface MainTableViewCell ()
+
+@end
+
+
 @implementation MainTableViewCell
 
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier{
@@ -19,7 +24,7 @@
             make.top.and.left.and.right.equalTo(self.contentView).offset(0);
             make.height.mas_equalTo(@250);
         }];
-        //_commodityImageView.image = [UIImage imageNamed:@"advert2"];
+        
         UIView *view = [UIView new];
         [self.contentView addSubview:view];
         [view mas_makeConstraints:^(MASConstraintMaker *make){
@@ -38,9 +43,9 @@
             make.left.and.bottom.right.equalTo(self.commodityImageView).offset(0);
             make.height.mas_equalTo(@50);
         }];
-        _commodityName.text = @"循疾问食｜商品名";
         
-        UIView *informationBar = [UIView new];
+        
+        UIView *informationBar = [UIView new]; //信息条
         informationBar.backgroundColor = [UIColor whiteColor];
         [self.contentView addSubview:informationBar];
         [informationBar mas_makeConstraints:^(MASConstraintMaker *make){
@@ -49,41 +54,78 @@
             make.bottom.equalTo(self.contentView).offset(-10);
         }];
         
-        self.classifyLabel = [UILabel new];
+        self.classifyImageView = [UIImageView new];  //分类图标
+        _classifyImageView.image = [UIImage imageNamed:@"new-ico"];
+        [informationBar addSubview:_classifyImageView];
+        
+        self.classifyLabel = [UILabel new]; //分类
         _classifyLabel.text = @"新品";
         [informationBar addSubview:_classifyLabel];
         
-        self.priceLabel = [UILabel new];
-        _priceLabel.text = @"0";
+        UIImageView *priceImageView = [UIImageView new]; //价格图标
+        priceImageView.image = [UIImage imageNamed:@"price-ico"];
+        [informationBar addSubview:priceImageView];
+        
+        self.priceLabel = [UILabel new];   //价格
+        _priceLabel.font = [UIFont boldSystemFontOfSize:20];
+        _priceLabel.text = @"0.00";
         [informationBar addSubview:_priceLabel];
         
-        self.distanceLabel = [UILabel new];
+        UIImageView *distanceImageView = [UIImageView new]; //距离图标
+        distanceImageView.image = [UIImage imageNamed:@"distance-ico"];
+        [informationBar addSubview:distanceImageView];
+        
+        self.distanceLabel = [UILabel new]; //距离
+        _distanceLabel.textColor = [UIColor grayColor];
+        _distanceLabel.font = [UIFont boldSystemFontOfSize:15];
         _distanceLabel.text = @"距离900米";
         [informationBar addSubview:_distanceLabel];
-    
+        
+        [_classifyImageView mas_makeConstraints:^(MASConstraintMaker *make){
+            make.top.equalTo(_commodityImageView.mas_bottom).offset(10);
+            make.left.equalTo(informationBar).offset(10);
+            make.right.equalTo(self.classifyLabel.mas_left).offset(-10);
+            make.bottom.equalTo(informationBar).offset(-10);
+            make.width.mas_equalTo(@30);
+        }];
         
         [_classifyLabel mas_makeConstraints:^(MASConstraintMaker *make){
             make.top.equalTo(_commodityImageView.mas_bottom).offset(0);
-            make.left.equalTo(informationBar).offset(5);
-            make.right.equalTo(self.priceLabel.mas_left).offset(0);
+            make.left.equalTo(_classifyImageView.mas_right).offset(10);
+            make.right.equalTo(priceImageView.mas_left).offset(-20);
             make.bottom.equalTo(informationBar).offset(0);
-            make.width.mas_equalTo(self.priceLabel.mas_width);
+            make.width.mas_equalTo(@60);
+        }];
+        
+        [priceImageView mas_makeConstraints:^(MASConstraintMaker *make){
+            make.top.equalTo(_commodityImageView.mas_bottom).offset(10);
+            make.left.equalTo(_classifyLabel.mas_right).offset(20);
+            make.right.equalTo(self.priceLabel.mas_left).offset(-10);
+            make.bottom.equalTo(informationBar).offset(-10);
+            make.width.mas_equalTo(@30);
         }];
         
         [_priceLabel mas_makeConstraints:^(MASConstraintMaker *make){
             make.top.equalTo(_commodityImageView.mas_bottom).offset(0);
-            make.left.equalTo(self.classifyLabel.mas_right).offset(0);
-            make.right.equalTo(self.distanceLabel.mas_left).offset(0);
+            make.left.equalTo(priceImageView.mas_right).offset(10);
+            make.right.equalTo(distanceImageView.mas_left).offset(-20);
             make.bottom.equalTo(informationBar).offset(0);
-            make.width.mas_equalTo(self.distanceLabel.mas_width);
+            make.width.mas_equalTo(@60);
+        }];
+        
+        [distanceImageView mas_makeConstraints:^(MASConstraintMaker *make){
+            make.top.equalTo(_commodityImageView.mas_bottom).offset(10);
+            make.left.equalTo(self.priceLabel.mas_right).offset(20);
+            make.right.equalTo(_distanceLabel.mas_left).offset(-5);
+            make.bottom.equalTo(informationBar).offset(-10);
+            make.width.mas_equalTo(@30);
         }];
         
         [_distanceLabel mas_makeConstraints:^(MASConstraintMaker *make){
-            make.top.equalTo(_commodityImageView.mas_bottom).offset(0);
-            make.left.equalTo(self.priceLabel.mas_right).offset(0);
-            make.right.equalTo(informationBar).offset(-5);
+            make.top.equalTo(_commodityImageView.mas_bottom).offset(10);
+            make.left.equalTo(distanceImageView.mas_right).offset(5);
+            make.right.equalTo(informationBar).offset(-10);
             make.bottom.equalTo(informationBar).offset(0);
-            make.width.mas_equalTo(self.classifyLabel.mas_width);
         }];
         
     }

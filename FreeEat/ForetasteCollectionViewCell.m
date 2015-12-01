@@ -45,26 +45,42 @@
         _commodityName.text = @"循疾问食｜商品名";
         
         self.commodityNumber = [UILabel new];
+        _commodityNumber.font = [UIFont boldSystemFontOfSize:15];
         [self.contentView addSubview:_commodityNumber];
+        
+        UIImageView *clockImageView = [UIImageView new];
+        clockImageView.image = [UIImage imageNamed:@"clock-ico"];
+        [self.contentView addSubview:clockImageView];
+        
+        self.commodityTime = [UILabel new];
+        [self.contentView addSubview:_commodityTime];
+        
         [_commodityNumber mas_makeConstraints:^(MASConstraintMaker *make){
             make.left.equalTo(self.contentView).offset(5);
             make.top.equalTo(self.commodityImageView.mas_bottom).offset(0);
             make.height.mas_equalTo(@30);
-            make.width.mas_equalTo(@80);
+            make.width.mas_equalTo(@60);
         }];
         _commodityNumber.text = @"免费5份";
         
-        self.commodityTime = [UILabel new];
-        [self.contentView addSubview:_commodityTime];
+        [clockImageView mas_makeConstraints:^(MASConstraintMaker *make){
+            make.left.equalTo(_commodityNumber.mas_right).offset(10);
+            make.right.equalTo(self.commodityTime.mas_left).offset(-5);
+            make.centerY.mas_equalTo(_commodityNumber.mas_centerY);
+            make.width.mas_equalTo(@20);
+            make.height.mas_equalTo(@20);
+        }];
+        
+        
         [_commodityTime mas_makeConstraints:^(MASConstraintMaker *make){
-            make.left.equalTo(_commodityNumber.mas_right).offset(5);
-            make.right.equalTo(self.contentView).offset(0);
+            make.left.equalTo(clockImageView.mas_right).offset(5);
+            make.right.equalTo(self.contentView).offset(5);
             make.centerY.mas_equalTo(_commodityNumber.mas_centerY);
             make.height.mas_equalTo(_commodityNumber.mas_height);
         }];
         self.commodityTime.text = @"5天12时30分";
         self.commodityTime.textColor = [UIColor grayColor];
-        self.commodityTime.font = [UIFont boldSystemFontOfSize:13];
+        self.commodityTime.font = [UIFont boldSystemFontOfSize:12];
         
         self.applyBtn = [UIButton buttonWithType:UIButtonTypeCustom];
         [self.contentView addSubview:_applyBtn];

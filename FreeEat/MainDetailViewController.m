@@ -22,7 +22,7 @@
     [super viewDidLoad];
     self.view.backgroundColor = RGBA(245, 241, 239, 1);
     self.title = @"商品详情";
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithTitle:@"分享" style:UIBarButtonItemStyleDone target:self action:@selector(clickRightButton:)];
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed:@"shared-ico_selected"] style:UIBarButtonItemStyleDone target:self action:@selector(clickRightButton:)];
     
     
     self.commodityView = [UIImageView new];

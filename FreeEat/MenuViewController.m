@@ -17,6 +17,7 @@
 @interface MenuViewController ()<UITableViewDataSource,UITableViewDelegate,HKSlideMenu3DControllerDelegate>{
     NSArray *images;
     NSArray *titles;
+    NSArray *images_highlight;
 }
 
 @property (nonatomic, strong) UITableView *tableView;
@@ -29,6 +30,8 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     titles = @[@"推荐",@"试吃",@"个人",@"设置",@"注销"];
+    images = @[@"recommend-ico", @"foretaste-ico", @"personage-ico", @"setting-ico", @"out-ico"];
+    images_highlight = @[@"recommend-ico_highlight", @"foretaste-ico_highlight", @"personage-ico_highlight", @"setting-ico_highlight", @"out-ico_highlight"];
     
     self.tableView = [[UITableView alloc]initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height) style:UITableViewStylePlain];
     self.tableView.delegate = self;
@@ -77,11 +80,14 @@
     
     if (indexPath.row) {
         cell.textLabel.textColor = [UIColor grayColor];
+        cell.imageView.image = [UIImage imageNamed:[images_highlight objectAtIndex:indexPath.row]];
+        
     }else{
         cell.textLabel.textColor = RGBA(253, 134, 111, 1);
+        cell.imageView.image = [UIImage imageNamed:[images objectAtIndex:indexPath.row]];
     }
     
-//    cell.imageView.image = [UIImage imageNamed:[images objectAtIndex:indexPath.row]];
+   
     
     NSIndexPath *firstPath = [NSIndexPath indexPathForRow:0 inSection:0];
     [self.tableView selectRowAtIndexPath:firstPath animated:YES scrollPosition:UITableViewScrollPositionTop];
@@ -103,6 +109,7 @@
     NSLog(@"deselect:%ld",(long)indexPath.row);
     UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
     cell.textLabel.textColor = [UIColor grayColor];
+    cell.imageView.image = [UIImage imageNamed:[images_highlight objectAtIndex:indexPath.row]];
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -110,6 +117,7 @@
     //NSIndexPath *indexPath = [tableView indexPathForSelectedRow];
     UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
     cell.textLabel.textColor = RGBA(253, 134, 111, 1);
+    cell.imageView.image = [UIImage imageNamed:[images objectAtIndex:indexPath.row]];
     
     [[AppDelegate mainDelegate] ChageViewController:indexPath];
 }
