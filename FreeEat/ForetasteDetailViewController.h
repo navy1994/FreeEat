@@ -10,4 +10,6 @@
 
 @interface ForetasteDetailViewController : UIViewController
 
+@property (nonatomic, strong) NSDictionary *commidyDic;
+
 @end

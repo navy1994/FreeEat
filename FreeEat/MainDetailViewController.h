@@ -10,6 +10,7 @@
 
 @interface MainDetailViewController : UIViewController
 
-@property (nonatomic, strong) NSDictionary *dic;
-
+@property (nonatomic, strong) NSURL *url;
+@property (nonatomic, strong) NSDictionary *commidyDic;
+@property (nonatomic) BOOL *isAdvert;
 @end
